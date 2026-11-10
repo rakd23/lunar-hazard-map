@@ -1,0 +1,94 @@
+{
+  "settings": {
+    "safe_max_deg": {
+      "value": 15.0,
+      "label": "sourced: NASA VIPER rover page (15 deg incline)"
+    },
+    "nogo_min_deg": {
+      "value": 25.0,
+      "label": "placeholder: project plan, rover not chosen"
+    },
+    "crop_km": 12.0,
+    "crop_bounds_m": [
+      -2154.8781,
+      -9201.3615,
+      9845.1219,
+      2798.6385
+    ]
+  },
+  "measured": {
+    "B_slope_check_80m": {
+      "median_abs_diff_deg": 0.1256,
+      "p95_abs_diff_deg": 0.5539,
+      "mean_bias_deg": 0.012
+    },
+    "C_class_shares_80m": {
+      "safe": 0.8254,
+      "caution": 0.1542,
+      "no-go": 0.0205
+    },
+    "E_psr": {
+      "n_psr": 1531,
+      "total_area_km2": 18973.9485,
+      "shackleton_psr_area_km2": 233.4218
+    },
+    "F_class_shares_5m_window": {
+      "safe": 0.2146,
+      "caution": 0.1417,
+      "no-go": 0.6436
+    },
+    "G_real_vs_interpolated": {
+      "window_frac_real_gt0": 0.0885,
+      "window_frac_real_ge1": 0.0885,
+      "full_frac_real_gt0": 0.0713,
+      "full_frac_real_ge1": 0.0713,
+      "full_pixels": 1040411592
+    },
+    "H_baseline": [
+      {
+        "method": "20 m slope rule",
+        "scored_on": "all pixels",
+        "nogo_recall": 0.9811,
+        "nogo_precision": 0.9642,
+        "nogo_f1": 0.9726,
+        "class_agreement": 0.95,
+        "pixels": 5607424,
+        "truth_nogo_pixels": 3636242
+      },
+      {
+        "method": "20 m slope rule",
+        "scored_on": "LOLA-shot pixels only",
+        "nogo_recall": 0.9803,
+        "nogo_precision": 0.9535,
+        "nogo_f1": 0.9667,
+        "class_agreement": 0.9421,
+        "pixels": 496103,
+        "truth_nogo_pixels": 307039
+      },
+      {
+        "method": "80 m slope rule",
+        "scored_on": "all pixels",
+        "nogo_recall": 0.9685,
+        "nogo_precision": 0.9535,
+        "nogo_f1": 0.9609,
+        "class_agreement": 0.9244,
+        "pixels": 5607424,
+        "truth_nogo_pixels": 3636242
+      },
+      {
+        "method": "80 m slope rule",
+        "scored_on": "LOLA-shot pixels only",
+        "nogo_recall": 0.9705,
+        "nogo_precision": 0.9428,
+        "nogo_f1": 0.9565,
+        "class_agreement": 0.9193,
+        "pixels": 496103,
+        "truth_nogo_pixels": 307039
+      }
+    ]
+  },
+  "data_citations": [
+    "Barker et al. 2023, PSJ 4, 183, doi:10.3847/PSJ/acf3e1",
+    "Barker et al. 2021, PSS 203, 105119, doi:10.1016/j.pss.2020.105119"
+  ]
+}

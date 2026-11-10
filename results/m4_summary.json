@@ -1,0 +1,319 @@
+{
+  "settings": {
+    "crop_km": 30.0,
+    "grid_m": 10,
+    "safe_max_deg": 15.0,
+    "nogo_min_deg": 25.0,
+    "scout_max_deg": 15.0,
+    "rappel_max_deg": 45.0,
+    "sunlit_penalty": 3.0,
+    "floor_frac": 0.05,
+    "tower_rule": "placeholder: highest point on the rim crest",
+    "tower_h_m": 50.0,
+    "hub_ant_m": 2.0,
+    "sortie_r_m": 500.0,
+    "labels": "safe_max, rappel_max sourced; others placeholder or setting"
+  },
+  "measured": {
+    "geometry": [
+      {
+        "item": "Rim diameter (km)",
+        "measured": 20.74,
+        "published": 21.0,
+        "note": "median over 360 directions"
+      },
+      {
+        "item": "Depth, rim to floor (km)",
+        "measured": 4.0747,
+        "published": 4.2,
+        "note": "median rim height minus floor"
+      },
+      {
+        "item": "Floor, equal-area diameter (km)",
+        "measured": 6.0883,
+        "published": null,
+        "note": "lowest 5% of depth (placeholder)"
+      },
+      {
+        "item": "Median wall slope, 5 m (deg)",
+        "measured": 29.8837,
+        "published": null,
+        "note": "between floor and rim"
+      },
+      {
+        "item": "Floor in permanent shadow (%)",
+        "measured": 100.0,
+        "published": null,
+        "note": "NASA PSR map"
+      },
+      {
+        "item": "Floor pixels with a real laser shot (%)",
+        "measured": 10.5061,
+        "published": null,
+        "note": "rest is filled in"
+      }
+    ],
+    "hazard_by_zone": [
+      {
+        "zone": "floor",
+        "area_km2": 29.1128,
+        "safe %": 87.2025,
+        "caution %": 11.9262,
+        "no-go %": 0.8714
+      },
+      {
+        "zone": "wall",
+        "area_km2": 308.0171,
+        "safe %": 6.7662,
+        "caution %": 13.3273,
+        "no-go %": 79.9065
+      },
+      {
+        "zone": "rim zone (rim to rim + 2 km)",
+        "area_km2": 142.881,
+        "safe %": 48.9531,
+        "caution %": 46.705,
+        "no-go %": 4.3418
+      }
+    ],
+    "drive_down_deg_from_tower": 31.6406,
+    "drive_down_deg_any_rim": 31.6406,
+    "floor_reach": [
+      {
+        "slope_limit_deg": 10,
+        "floor_drivable_pct": 63.2303,
+        "largest_connected_floor_pct": 61.7591,
+        "can_drive_rim_to_floor": false
+      },
+      {
+        "slope_limit_deg": 15,
+        "floor_drivable_pct": 84.6796,
+        "largest_connected_floor_pct": 84.0063,
+        "can_drive_rim_to_floor": false
+      },
+      {
+        "slope_limit_deg": 20,
+        "floor_drivable_pct": 94.1703,
+        "largest_connected_floor_pct": 93.9611,
+        "can_drive_rim_to_floor": false
+      },
+      {
+        "slope_limit_deg": 25,
+        "floor_drivable_pct": 98.546,
+        "largest_connected_floor_pct": 98.4526,
+        "can_drive_rim_to_floor": false
+      },
+      {
+        "slope_limit_deg": 30,
+        "floor_drivable_pct": 99.8805,
+        "largest_connected_floor_pct": 99.8805,
+        "can_drive_rim_to_floor": false
+      },
+      {
+        "slope_limit_deg": 35,
+        "floor_drivable_pct": 99.9863,
+        "largest_connected_floor_pct": 99.9863,
+        "can_drive_rim_to_floor": true
+      },
+      {
+        "slope_limit_deg": 40,
+        "floor_drivable_pct": 99.9973,
+        "largest_connected_floor_pct": 99.9973,
+        "can_drive_rim_to_floor": true
+      },
+      {
+        "slope_limit_deg": 45,
+        "floor_drivable_pct": 100.0,
+        "largest_connected_floor_pct": 100.0,
+        "can_drive_rim_to_floor": true
+      }
+    ],
+    "tether_routes": [
+      {
+        "route": "prefers shadow (x3)",
+        "length_3d_km": 9.3581,
+        "map_length_km": 8.1805,
+        "wall_part_3d_km": 9.3581,
+        "drop_m": 4361.1494,
+        "in_shadow_pct": 68.6228,
+        "steepest_5m_deg": 41.2397,
+        "mean_slope_deg": 28.1844
+      },
+      {
+        "route": "no shadow preference",
+        "length_3d_km": 9.3038,
+        "map_length_km": 8.1308,
+        "wall_part_3d_km": 9.3038,
+        "drop_m": 4361.1494,
+        "in_shadow_pct": 66.7326,
+        "steepest_5m_deg": 41.5073,
+        "mean_slope_deg": 28.2509
+      }
+    ],
+    "hub_sweep": [
+      {
+        "hubs": 1,
+        "worst_drive_to_hub_km": 7.4652,
+        "mean_drive_to_hub_km": 3.7905,
+        "floor_within_sortie_pct": 1.1616,
+        "floor_cable_km": 0.0,
+        "total_tether_km": 9.3581
+      },
+      {
+        "hubs": 2,
+        "worst_drive_to_hub_km": 6.1459,
+        "mean_drive_to_hub_km": 3.1464,
+        "floor_within_sortie_pct": 2.4128,
+        "floor_cable_km": 7.4652,
+        "total_tether_km": 16.8233
+      },
+      {
+        "hubs": 3,
+        "worst_drive_to_hub_km": 4.5378,
+        "mean_drive_to_hub_km": 2.1714,
+        "floor_within_sortie_pct": 3.386,
+        "floor_cable_km": 12.4133,
+        "total_tether_km": 21.7714
+      },
+      {
+        "hubs": 4,
+        "worst_drive_to_hub_km": 3.674,
+        "mean_drive_to_hub_km": 1.9808,
+        "floor_within_sortie_pct": 4.0979,
+        "floor_cable_km": 16.9511,
+        "total_tether_km": 26.3092
+      },
+      {
+        "hubs": 5,
+        "worst_drive_to_hub_km": 3.5973,
+        "mean_drive_to_hub_km": 1.7066,
+        "floor_within_sortie_pct": 5.4452,
+        "floor_cable_km": 18.1588,
+        "total_tether_km": 27.5169
+      },
+      {
+        "hubs": 6,
+        "worst_drive_to_hub_km": 2.9745,
+        "mean_drive_to_hub_km": 1.4749,
+        "floor_within_sortie_pct": 5.6823,
+        "floor_cable_km": 19.0773,
+        "total_tether_km": 28.4354
+      }
+    ],
+    "line_of_sight": [
+      {
+        "hub": 1,
+        "x_km": 5.175,
+        "y_km": -5.7,
+        "straight_line_km": 7.9972,
+        "in_shadow": true,
+        "tower_can_see": false,
+        "min_clearance_m": -96.085
+      },
+      {
+        "hub": 2,
+        "x_km": 8.105,
+        "y_km": -9.8,
+        "straight_line_km": 11.5492,
+        "in_shadow": true,
+        "tower_can_see": false,
+        "min_clearance_m": -29.9945
+      },
+      {
+        "hub": 3,
+        "x_km": 10.885,
+        "y_km": -4.81,
+        "straight_line_km": 13.7551,
+        "in_shadow": true,
+        "tower_can_see": false,
+        "min_clearance_m": -10.9051
+      },
+      {
+        "hub": 4,
+        "x_km": 7.525,
+        "y_km": -9.2,
+        "straight_line_km": 10.8121,
+        "in_shadow": true,
+        "tower_can_see": false,
+        "min_clearance_m": -37.0077
+      }
+    ],
+    "floor_seen_from_tower_pct": 0.0,
+    "lantern_check": [
+      {
+        "item": "Crater diameter (km)",
+        "lantern": "about 21 (sourced)",
+        "measured": 20.7
+      },
+      {
+        "item": "Tether down the wall (km)",
+        "lantern": "about 1.8 (placeholder)",
+        "measured": 9.36
+      },
+      {
+        "item": "Floor cable for 4 hubs (km)",
+        "lantern": "about 2.2 (placeholder)",
+        "measured": 16.95
+      },
+      {
+        "item": "Wall descent slope (deg)",
+        "lantern": "T-REX tested to 45 (sourced)",
+        "measured": 41.2
+      },
+      {
+        "item": "Slope to drive rim to floor (deg)",
+        "lantern": "not stated",
+        "measured": 31.6
+      },
+      {
+        "item": "Tether route in permanent shadow (%)",
+        "lantern": "should be high",
+        "measured": 69.0
+      },
+      {
+        "item": "Floor within 500 m of a hub, 4 hubs (%)",
+        "lantern": "about 80% mapped in simulator",
+        "measured": 4.0
+      },
+      {
+        "item": "Floor visible from the tower (%)",
+        "lantern": "not stated",
+        "measured": 0.0
+      }
+    ],
+    "tower_xy_m": [
+      -2815.0,
+      -6040.0
+    ],
+    "hubs_xy_m": [
+      [
+        5175.0,
+        -5700.0
+      ],
+      [
+        8105.0,
+        -9800.0
+      ],
+      [
+        10885.0,
+        -4810.0
+      ],
+      [
+        7525.0,
+        -9200.0
+      ],
+      [
+        7825.0,
+        -3370.0
+      ],
+      [
+        8825.0,
+        -7880.0
+      ]
+    ]
+  },
+  "data_citations": [
+    "Barker et al. 2021, PSS 203, 105119, doi:10.1016/j.pss.2020.105119",
+    "Barker et al. 2023, PSJ 4, 183, doi:10.3847/PSJ/acf3e1"
+  ]
+}

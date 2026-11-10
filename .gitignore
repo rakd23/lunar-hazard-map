@@ -1,0 +1,27 @@
+# Big rasters live in ~/lunar/data, never in git
+data/
+*.tif
+*.TIF
+*.tiff
+*.aux.xml
+*.SHP
+*.SHX
+*.DBF
+*.PRJ
+*.shp
+*.shx
+*.dbf
+*.prj
+*.XYZI
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+
+# Models
+*.pth
+*.pt
+
+# macOS
+.DS_Store

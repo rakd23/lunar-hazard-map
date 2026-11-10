@@ -1,0 +1,290 @@
+{
+  "settings": {
+    "safe_max_deg": {
+      "value": 15.0,
+      "label": "sourced: NASA VIPER page"
+    },
+    "nogo_min_deg": {
+      "value": 25.0,
+      "label": "placeholder: project plan"
+    },
+    "patch_5m_px": 512,
+    "patch_20m_px": 128,
+    "block_patches": 8,
+    "seed": 23,
+    "split_frac": {
+      "test": 0.15,
+      "val": 0.15
+    },
+    "strata": [
+      [
+        0.0,
+        0.1,
+        "mostly drivable"
+      ],
+      [
+        0.1,
+        0.5,
+        "mixed"
+      ],
+      [
+        0.5,
+        1.01,
+        "mostly steep"
+      ]
+    ],
+    "min_valid": 0.98,
+    "channels": [
+      "elev_rel",
+      "slope20",
+      "bump20",
+      "hill20",
+      "logcount20",
+      "psr20"
+    ],
+    "grid_shift_5m_px": [
+      0,
+      0
+    ]
+  },
+  "measured": {
+    "B_m1_window_recheck": {
+      "median_offset_m": 0.06099,
+      "median_abs_diff_m": 0.4511,
+      "best_shift_px": [
+        0,
+        0
+      ],
+      "rms_at_best_shift_m": 0.77508,
+      "m1_window_scores": [
+        {
+          "method": "20 m rule, averaged 5 m (M1 method)",
+          "nogo_recall": 0.981,
+          "nogo_precision": 0.964,
+          "nogo_f1": 0.973,
+          "class_agreement": 0.95
+        },
+        {
+          "method": "20 m rule, NASA 20 m map",
+          "nogo_recall": 0.979,
+          "nogo_precision": 0.961,
+          "nogo_f1": 0.97,
+          "class_agreement": 0.946
+        }
+      ]
+    },
+    "patches_per_split": {
+      "train": 2234,
+      "test": 599,
+      "val": 397
+    },
+    "patches_per_split_terrain": {
+      "test": {
+        "mixed": 44,
+        "mostly drivable": 514,
+        "mostly steep": 41
+      },
+      "train": {
+        "mixed": 74,
+        "mostly drivable": 2136,
+        "mostly steep": 24
+      },
+      "val": {
+        "mixed": 12,
+        "mostly drivable": 382,
+        "mostly steep": 3
+      }
+    },
+    "class_shares": {
+      "train": {
+        "safe": 0.7841,
+        "caution": 0.1954,
+        "no-go": 0.0205
+      },
+      "val": {
+        "safe": 0.7539,
+        "caution": 0.2303,
+        "no-go": 0.0159
+      },
+      "test": {
+        "safe": 0.675,
+        "caution": 0.2428,
+        "no-go": 0.0822
+      }
+    },
+    "E_baseline_overall": [
+      {
+        "patches": 3230,
+        "truth_nogo_px": 26551293,
+        "nogo_recall": 0.80808,
+        "nogo_precision": 0.86367,
+        "nogo_f1": 0.83495,
+        "recall_real_px": 0.79297,
+        "f1_real_px": 0.82794
+      }
+    ],
+    "E_baseline_by_terrain": [
+      {
+        "terrain": "mixed",
+        "patches": 130,
+        "truth_nogo_px": 7695929,
+        "nogo_recall": 0.73833,
+        "nogo_precision": 0.78394,
+        "nogo_f1": 0.76045,
+        "recall_real_px": 0.70821,
+        "f1_real_px": 0.74006
+      },
+      {
+        "terrain": "mostly drivable",
+        "patches": 3032,
+        "truth_nogo_px": 4268940,
+        "nogo_recall": 0.38822,
+        "nogo_precision": 0.66574,
+        "nogo_f1": 0.49044,
+        "recall_real_px": 0.29681,
+        "f1_real_px": 0.41072
+      },
+      {
+        "terrain": "mostly steep",
+        "patches": 68,
+        "truth_nogo_px": 14586424,
+        "nogo_recall": 0.96776,
+        "nogo_precision": 0.93455,
+        "nogo_f1": 0.95086,
+        "recall_real_px": 0.96872,
+        "f1_real_px": 0.94657
+      }
+    ],
+    "E_baseline_by_split_terrain": [
+      {
+        "split": "test",
+        "terrain": "mixed",
+        "patches": 44,
+        "truth_nogo_px": 2452394,
+        "nogo_recall": 0.75098,
+        "nogo_precision": 0.80011,
+        "nogo_f1": 0.77477,
+        "recall_real_px": 0.73526,
+        "f1_real_px": 0.76563
+      },
+      {
+        "split": "test",
+        "terrain": "mostly drivable",
+        "patches": 514,
+        "truth_nogo_px": 1088512,
+        "nogo_recall": 0.38333,
+        "nogo_precision": 0.68408,
+        "nogo_f1": 0.49133,
+        "recall_real_px": 0.30784,
+        "f1_real_px": 0.42706
+      },
+      {
+        "split": "test",
+        "terrain": "mostly steep",
+        "patches": 41,
+        "truth_nogo_px": 9360668,
+        "nogo_recall": 0.98418,
+        "nogo_precision": 0.95629,
+        "nogo_f1": 0.97004,
+        "recall_real_px": 0.98262,
+        "f1_real_px": 0.96288
+      },
+      {
+        "split": "train",
+        "terrain": "mixed",
+        "patches": 74,
+        "truth_nogo_px": 4564328,
+        "nogo_recall": 0.73027,
+        "nogo_precision": 0.77441,
+        "nogo_f1": 0.75169,
+        "recall_real_px": 0.6849,
+        "f1_real_px": 0.71887
+      },
+      {
+        "split": "train",
+        "terrain": "mostly drivable",
+        "patches": 2136,
+        "truth_nogo_px": 2747100,
+        "nogo_recall": 0.39174,
+        "nogo_precision": 0.65976,
+        "nogo_f1": 0.49159,
+        "recall_real_px": 0.29626,
+        "f1_real_px": 0.40793
+      },
+      {
+        "split": "train",
+        "terrain": "mostly steep",
+        "patches": 24,
+        "truth_nogo_px": 4687874,
+        "nogo_recall": 0.94108,
+        "nogo_precision": 0.89976,
+        "nogo_f1": 0.91996,
+        "recall_real_px": 0.93372,
+        "f1_real_px": 0.9059
+      },
+      {
+        "split": "val",
+        "terrain": "mixed",
+        "patches": 12,
+        "truth_nogo_px": 679207,
+        "nogo_recall": 0.74686,
+        "nogo_precision": 0.78981,
+        "nogo_f1": 0.76774,
+        "recall_real_px": 0.73232,
+        "f1_real_px": 0.75607
+      },
+      {
+        "split": "val",
+        "terrain": "mostly drivable",
+        "patches": 382,
+        "truth_nogo_px": 433328,
+        "nogo_recall": 0.37822,
+        "nogo_precision": 0.65992,
+        "nogo_f1": 0.48085,
+        "recall_real_px": 0.26745,
+        "f1_real_px": 0.38006
+      },
+      {
+        "split": "val",
+        "terrain": "mostly steep",
+        "patches": 3,
+        "truth_nogo_px": 537882,
+        "nogo_recall": 0.91442,
+        "nogo_precision": 0.86603,
+        "nogo_f1": 0.88957,
+        "recall_real_px": 0.8993,
+        "f1_real_px": 0.86671
+      }
+    ],
+    "real_px_share": 0.07208,
+    "psr_share": 0.20982
+  },
+  "for_milestone_3": {
+    "channel_mean": [
+      0.0,
+      9.94285,
+      0.98109,
+      0.69371,
+      0.6397,
+      0.18797
+    ],
+    "channel_std": [
+      135.81051,
+      6.17617,
+      1.11956,
+      0.09909,
+      0.51686,
+      0.39069
+    ],
+    "class_weights": [
+      0.42511,
+      1.70591,
+      16.2684
+    ],
+    "note": "normalise x with these, then replace any NaN with 0"
+  },
+  "data_citations": [
+    "Barker et al. 2023, PSJ 4, 183, doi:10.3847/PSJ/acf3e1",
+    "Barker et al. 2021, PSS 203, 105119, doi:10.1016/j.pss.2020.105119"
+  ]
+}
